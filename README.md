@@ -1,54 +1,177 @@
-# Vitrina UEA - Vitrina de Emprendimientos de Moda
+# 🛍️ Vitrina UEA - Proyecto Integrador
 
-## Descripción del proyecto
+## 📌 Descripción
+Este proyecto corresponde a la asignatura **Desarrollo de Aplicaciones Web (UEA)** y representa la evolución del trabajo realizado en la **Semana 3**, ahora mejorado en la **Semana 4** mediante la implementación de **CSS3, diseño responsivo y Bootstrap**.
 
-`Vitrina UEA` es una página web estática diseñada para mostrar un proyecto escolar de promoción de emprendimientos de moda local. El objetivo es presentar una vitrina digital con información sobre la iniciativa, los servicios ofrecidos y los datos de contacto.
+El objetivo del proyecto es crear una plataforma digital para promocionar emprendimientos de moda local, permitiendo mostrar productos, información y contacto de manera organizada y moderna.
 
-## Estructura del proyecto
+---
 
-- `S4index.html` - Página principal escrita en HTML con secciones de inicio, quiénes somos, productos, contacto y video.
-- `imagenes/moda.jpg.avif` - Imagen utilizada en la sección "Quiénes Somos" para representar moda local.
-- `README.md` - Documentación del proyecto.
+# 🔄 Evolución del Proyecto (Semana 3 → Semana 4)
 
-## Qué contiene el sitio
+## 🟡 1. Estructura original conservada (Semana 3)
+Se mantuvo la estructura semántica original del proyecto:
 
-La página incluye:
+- `<header>`
+- `<nav>`
+- `<main>`
+- `<section>`
+- `<article>`
+- `<aside>`
+- `<footer>`
 
-- Un título y una breve presentación del proyecto.
-- Un menú de navegación interno con enlaces a cada sección.
-- Una sección de "Quiénes Somos" con una explicación del propósito de Vitrina UEA.
-- Una lista de servicios y productos orientados a emprendimientos de moda.
-- Datos de contacto: correo electrónico, teléfono, dirección y redes sociales.
-- Un video embebido de YouTube que apoya la explicación del proyecto.
-- Información adicional en un bloque lateral (`aside`) con horario y promoción.
+✔ Esto permite conservar la base del proyecto y cumplir con la continuidad solicitada por el docente.
 
-## Cómo se realizó paso a paso
+---
 
-1. Crear la estructura básica de HTML con `<!DOCTYPE html>` y las etiquetas principales (`html`, `head`, `body`).
-2. Definir el idioma como español con `lang="es"` y agregar metadatos como `charset` y `viewport`.
-3. Añadir un `header` con el título del proyecto, una descripción corta y un `nav` con enlaces a secciones internas.
-4. Crear el elemento `main` y dentro de él las secciones principales:
-   - `#inicio` con bienvenida y propósito.
-   - `#nosotros` con descripción del proyecto y el emprendimiento.
-   - `#productos` con la lista de servicios disponibles.
-   - `#contacto` con correo, teléfono, dirección y enlaces a redes sociales.
-5. Insertar la imagen del emprendimiento con la etiqueta `img` y una ruta relativa a la carpeta `imagenes`.
-6. Añadir un `iframe` para mostrar un video de YouTube dentro de la página.
-7. Incluir un `aside` con información adicional del proyecto y un `footer` con datos del autor y la fecha.
+## 🟢 2. Mejora del diseño con Bootstrap
+Se integró el framework:
 
-## Tecnologías utilizadas
+```html
+Bootstrap 5
+```
+
+### ✔ Cambios realizados:
+
+- Navbar responsiva con menú colapsable
+
+- Sistema de grillas (`container`, `row`, `col`)
+
+- Tarjetas (cards) para servicios
+
+- Botones estilizados
+
+- Formularios con diseño profesional
+
+- Imágenes responsivas (`img-fluid`)
+
+---
+
+## 🔵 3. Mejora de la sección Inicio
+
+### Antes:
+
+- Texto simple sin diseño
+
+### Ahora:
+
+- Sección centrada
+
+- Fondo diferenciado
+
+- Mejor jerarquía visual
+
+✔ Mejora en presentación y experiencia del usuario
+
+---
+
+## 🟣 4. Quiénes Somos optimizado
+
+### Antes:
+
+- Texto largo sin estructura visual
+
+### Ahora:
+
+- Distribución en dos columnas (texto + imagen)
+
+- Imagen responsiva
+
+- Mejor lectura del contenido
+
+---
+
+## 🟠 5. Productos mejorados
+
+### Antes:
+
+- Lista HTML simple (``)
+
+### Ahora:
+
+- Tarjetas Bootstrap (cards)
+
+- Distribución en grid responsivo
+
+- Diseño más moderno y profesional
+
+---
+
+## 🔴 6. Contacto mejorado
+
+### Antes:
+
+- Información en texto plano
+
+### Ahora:
+
+- Formulario funcional con Bootstrap
+
+- Información organizada en columnas
+
+- Mejor accesibilidad visual
+
+---
+
+## 🟤 7. Multimedia mejorada
+
+- Video incrustado con formato responsivo (`ratio 16x9`)
+
+- Mejor adaptación a dispositivos móviles
+
+---
+
+## ⚫ 8. Diseño responsivo (CSS3)
+
+Se implementó:
+
+- Media queries
+
+- Adaptación a pantallas pequeñas
+
+- Tipografía y espaciado mejorado
+
+- Sombras y efectos hover
+
+---
+
+# 🧠 Tecnologías utilizadas
 
 - HTML5
-- Imagen en formato AVIF para optimizar el peso y la calidad visual
-- YouTube embed para video integrado
 
-## Cómo ejecutar el proyecto
+- CSS3
 
-1. Abre el archivo `S4index.html` en un navegador web.
-2. Si estás en un entorno de servidor local, coloca la carpeta del proyecto en el servidor y navega a `S4index.html`.
+- Bootstrap 5
 
-## Notas finales
+- Diseño responsivo
 
-- Este proyecto no requiere instalación ni compilación.
-- El contenido está listo para ser alojado en GitHub Pages u otro servicio de hosting estático.
-- Si deseas, también puedo ayudarte a mejorar el diseño con CSS o a agregar un formulario de contacto.
+- Flexbox y Grid (Bootstrap)
+
+---
+
+# 🎯 Objetivo alcanzado
+
+✔ Transformar un sitio web básico (Semana 3) en una interfaz moderna y responsiva
+✔ Aplicar Bootstrap correctamente
+✔ Mejorar la experiencia de usuario
+✔ Mantener la estructura original del proyecto
+
+---
+
+# 👨‍🎓 Autor
+
+**Johnny Alberto Vera Vaca**
+Desarrollo de Aplicaciones Web - UEA
+2026
+
+---
+
+# 🚀 Instrucciones de uso
+
+1. Clonar el repositorio
+
+2. Abrir `index.html`
+
+3. Visualizar en navegador
+
+4. (Opcional) Publicar en GitHub Pages
