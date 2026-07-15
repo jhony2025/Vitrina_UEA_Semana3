@@ -1,57 +1,51 @@
 # Vitrina UEA
 
-## Actualización Semana 7
+## Avance del proyecto final - Componente práctico experimental
 
-Este repositorio contiene el trabajo y las mejoras correspondientes a la semana 7 del curso. El objetivo de esta entrega es reforzar la presentación del sitio, la experiencia del usuario y la estructura dinámica de contenido.
+Este repositorio contiene un avance práctico y experimental del proyecto final para el curso, diseñado como una vitrina digital de emprendimientos de moda local. La entrega actual adapta y mejora el diseño y la funcionalidad solicitados por el docente.
 
-## Descripción del proyecto
+## Resumen del proyecto
 
-Vitrina UEA es una página web estática creada para mostrar una vitrina digital de emprendimientos locales en el área de moda. El proyecto busca presentar productos y servicios de forma ordenada, con una interfaz accesible y una estructura preparada para crecer a futuro.
+Vitrina UEA es una página web estática que reúne secciones de presentación, información de la propuesta, espacios para tiendas destacadas y un registro dinámico de productos. El diseño se construyó con Bootstrap para garantizar una presentación responsiva y con JavaScript para que el contenido pueda manejarse de forma interactiva.
 
-## Qué se actualizó
+## Qué se incorporó según lo solicitado
 
-En esta versión se mejoró la presentación y la usabilidad del sitio con los siguientes cambios:
+- Se restauró y reconstruyó el archivo `index.html` con una estructura clara de secciones: Inicio, Quiénes Somos, Servicios y Productos, Registro, Contacto y lista dinámica.
+- Se incorporó una barra de navegación fija, anclas internas y un encabezado visual moderno con Bootstrap.
+- Se agregó una sección de tiendas con tarjetas de imágenes más altas y verticales, mejorando el encuadre para no cortar rostros.
+- Se incluyó una sección de registro de productos con formulario validado, spinner visual y generación dinámica de la tabla de resultados.
+- En JavaScript se mantuvo y mejoró la lógica para crear productos, mostrar mensajes de alerta y borrar elementos con confirmación.
+- Se emplearon alertas, modal y spinner para cumplir los requerimientos de interactividad y feedback visual.
+- Se aplicaron estilos personalizados en `style.css` para dar más presencia al contenido, mejorar el contraste y mantener el sitio responsive.
 
-- Se optimizó la sección **Quiénes Somos** con texto más visible, mejor estructura y un estilo destacado.
-- Se reforzó el diseño general con una paleta clara y una mejor organización de contenido en tarjetas.
-- Se mejoró el soporte visual de la sección de tiendas y productos con Bootstrap y estilos personalizados.
-- Se mantuvo y mejoró la lógica de JavaScript para el registro dinámico de productos.
-- Se agregó un comentario de referencia para una futura sala de encuentro, sin mostrarla en la interfaz actual.
-- Se ajustó el `style.css` para refinar el diseño de secciones, cards, botones e imágenes.
+## Explicación del código anterior y su evolución
+
+- `index.html`: Organiza la interfaz en secciones semánticas y usa clases Bootstrap para layout responsivo. Contiene también el markup para el modal de confirmación y una cubierta de video que puede reemplazarse en versiones posteriores.
+- `style.css`: Añade reglas de estilo propias para el diseño general, tarjetas, imágenes y comportamiento visual. En la última iteración, se ajustaron las imágenes de las tarjetas para que sean más altas y verticales sin ampliar demasiado el ancho.
+- `script.js`: Controla la interacción del usuario al registrar productos. Valida el formulario, muestra mensajes temporales, agrega filas a la tabla y permite eliminar productos.
+
+## Resultado del avance
+
+Este avance demuestra que el proyecto ya cuenta con:
+
+- una interfaz de usuario funcional y mejorada,
+- una lógica dinámica con JavaScript,
+- componentes visuales solicitados por el docente (alertas, modal, spinner, tarjetas verticales),
+- y una base sólida para continuar con el desarrollo del proyecto final.
 
 ## Archivos principales
 
-- `index.html`: estructura de la página con secciones semánticas, anclas y componentes reutilizables.
-- `style.css`: estilos personalizados para la presentación, responsive design y realce de secciones clave.
-- `script.js`: gestión dinámica de contenido, validación de formulario y renderizado de productos y servicios.
-- `imagenes/`: recursos gráficos usados en la página.
+- `index.html`: página principal y estructura del sitio.
+- `style.css`: estilos personalizados y ajustes visuales.
+- `script.js`: lógica de registro dinámico y manejo de interfaz.
+- `imagenes/`: recursos gráficos utilizados.
 
-## Pasos para usar el proyecto
+## Instrucciones de uso
 
 1. Clonar o descargar el repositorio.
-2. Abrir `index.html` en un navegador web.
-3. Navegar por las secciones: Inicio, Quiénes Somos, Servicios, Tiendas, Productos, Contacto y Registro.
-4. En la sección de registro, completar el formulario para añadir un producto y ver cómo se muestra dinámicamente.
-
-## Instrucciones para subir cambios a GitHub
-
-1. Abrir una terminal en la carpeta del proyecto.
-2. Verificar el estado de git con:
-   ```bash
-git status
-```
-3. Agregar los archivos modificados:
-   ```bash
-git add index.html style.css script.js README.md
-```
-4. Crear un commit con un mensaje claro:
-   ```bash
-git commit -m "Actualiza README y mejora sección Quiénes Somos"
-```
-5. Enviar los cambios al repositorio remoto:
-   ```bash
-git push origin main
-```
+2. Abrir `index.html` en un navegador.
+3. Navegar por las secciones y probar el registro de productos.
+4. Revisar los cambios en `style.css` y `script.js` para adaptar la lógica en futuras entregas.
 
 ## Estructura del proyecto
 
@@ -65,7 +59,8 @@ VITRINA_UEA_SEMANA3
 └── imagenes/
     ├── moda.jpg.avif
     ├── moda2.jpg.avif
-    └── moda3.jpg.avif
+    ├── moda3.jpg.avif
+    └── otras imágenes relacionadas
 ```
 
 ## Tecnologías utilizadas

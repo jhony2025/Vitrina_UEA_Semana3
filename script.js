@@ -14,8 +14,16 @@ const categoria = document.getElementById("categoria");
 const errorNombre = document.getElementById("errorNombre");
 const errorDescripcion = document.getElementById("errorDescripcion");
 const errorCategoria = document.getElementById("errorCategoria");
+const tabla = document.getElementById("tablaProductos");
+const spinnerRegistro = document.getElementById("spinnerRegistro");
+const videoSpinner = document.getElementById("videoSpinner");
+const deleteProductNameEl = document.getElementById("deleteProductName");
+const confirmDeleteBtn = document.getElementById("confirmDeleteBtn");
 
 let total = 0;
+let tarjetaAEliminar = null;
+
+const confirmDeleteModal = new bootstrap.Modal(document.getElementById("confirmDeleteModal"));
 
 // =============================
 // MOSTRAR MENSAJES
@@ -29,7 +37,7 @@ function mostrarMensaje(tipo, texto) {
 
 function limpiarMensaje() {
 
-    mensaje.className = "mt-4";
+    mensaje.className = "mt-4 d-none";
     mensaje.textContent = "";
 }
 
@@ -173,18 +181,25 @@ formulario.addEventListener("submit", function (event) {
         return;
     }
 
-    mostrarMensaje(
-        "alert-success",
-        "Producto registrado correctamente."
-    );
+    spinnerRegistro.classList.remove("d-none");
+    formulario.querySelector("button[type=submit]").disabled = true;
 
-    crearProducto(
-        nombre.value.trim(),
-        descripcion.value.trim(),
-        categoria.value
-    );
+    setTimeout(() => {
+        mostrarMensaje(
+            "alert-success",
+            "Producto registrado correctamente."
+        );
 
-    limpiarFormulario();
+        crearProducto(
+            nombre.value.trim(),
+            descripcion.value.trim(),
+            categoria.value
+        );
+
+        limpiarFormulario();
+        spinnerRegistro.classList.add("d-none");
+        formulario.querySelector("button[type=submit]").disabled = false;
+    }, 700);
 });
 
 // =============================
@@ -222,23 +237,63 @@ function crearProducto(nombre, descripcion, categoria) {
 
     `;
 
+    const fila = document.createElement("tr");
+    fila.innerHTML = `
+        <td>${nombre}</td>
+        <td>${descripcion}</td>
+        <td>${categoria}</td>
+        <td>
+            <button class="btn btn-sm btn-danger eliminar-tabla">Eliminar</button>
+        </td>
+    `;
+
+    tabla.appendChild(fila);
     lista.appendChild(tarjeta);
 
     total++;
 
-actualizarContador();
+    actualizarContador();
 
     const botonEliminar =
         tarjeta.querySelector(".eliminar");
+    const botonEliminarTabla =
+        fila.querySelector(".eliminar-tabla");
 
-    botonEliminar.addEventListener("click", () => {
+    const confirmarEliminacion = () => {
+        tarjetaAEliminar = { tarjeta, fila };
+        deleteProductNameEl.textContent = nombre;
+        confirmDeleteModal.show();
+    };
 
-        tarjeta.remove();
+    botonEliminar.addEventListener("click", confirmarEliminacion);
+    botonEliminarTabla.addEventListener("click", confirmarEliminacion);
 
-        total--;
+}
 
-actualizarContador();
+confirmDeleteBtn.addEventListener("click", () => {
+    if (!tarjetaAEliminar) return;
 
+    tarjetaAEliminar.tarjeta.remove();
+    tarjetaAEliminar.fila.remove();
+    tarjetaAEliminar = null;
+
+    total--;
+    actualizarContador();
+    mostrarMensaje("alert-warning", "Producto eliminado correctamente.");
+    confirmDeleteModal.hide();
+});
+
+// =====================================================
+// VIDEO PORTADA
+// =====================================================
+
+const playVideoBtn = document.getElementById("playVideoBtn");
+const videoIframe = document.getElementById("videoIframe");
+const videoContainer = document.querySelector(".video-container");
+
+if (playVideoBtn && videoIframe && videoContainer) {
+    playVideoBtn.addEventListener("click", () => {
+        videoIframe.src = `${videoIframe.dataset.src}?autoplay=1`;
+        videoContainer.classList.add("loaded");
     });
-
 }
