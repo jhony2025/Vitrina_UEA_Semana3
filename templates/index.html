@@ -1,0 +1,972 @@
+</html>
+
+{% extends "base.html" %}
+
+{% block title %}
+Inicio - Vitrina UEA
+{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <!-- ==========================================
+         CONFIGURACIÓN GENERAL DEL DOCUMENTO
+    =========================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Vitrina UEA - Plataforma digital para promocionar emprendimientos de moda local.">
+
+    <meta
+        name="author"
+        content="Johnny Alberto Vera Vaca">
+
+    <title>Vitrina UEA</title>
+
+    <!-- ==========================================
+         BOOTSTRAP
+    =========================================== -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- ==========================================
+         HOJA DE ESTILOS PERSONALIZADA
+    =========================================== -->
+
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+
+    <main class="container my-5">
+
+          <!-- ==========================================
+                    SECCIÓN INICIO
+    =========================================== -->
+
+    <section
+        id="inicio"
+        class="p-5 mb-5 bg-light rounded shadow-sm">
+
+        <div class="text-center">
+
+            <h2 class="mb-4">
+                Inicio
+            </h2>
+
+            <p class="lead">
+
+                Bienvenidos a <strong>Vitrina UEA</strong>, una plataforma digital
+                diseñada para apoyar a pequeños emprendimientos de ropa y moda.
+                Este espacio permite mostrar productos, conectar clientes con
+                tiendas locales y fortalecer el comercio mediante herramientas
+                tecnológicas.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+                SECCIÓN QUIÉNES SOMOS
+    =========================================== -->
+
+    <section
+        id="nosotros"
+        class="mb-5">
+
+        <div class="text-center mb-4">
+
+            <h2>
+                Quiénes Somos
+            </h2>
+
+        </div>
+
+        <div class="row align-items-center g-4">
+
+            <div class="col-lg-6">
+
+                <div class="card card-body border-0 shadow-sm bg-white rounded-4">
+
+                    <h3 class="h5 text-primary mb-4">
+
+                        Nuestro compromiso con la moda local
+
+                    </h3>
+
+                    <div class="feature-list">
+
+                        <div class="feature-item mb-3">
+
+                            <div class="feature-icon">1</div>
+
+                            <div>
+
+                                <strong>Apoyo a emprendedores</strong>
+
+                                <p class="mb-0">
+
+                                    Vitrina UEA apoya a pequeños negocios dedicados a
+                                    la venta de ropa y productos de moda.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="feature-item mb-3">
+
+                            <div class="feature-icon">2</div>
+
+                            <div>
+
+                                <strong>Espacio organizado</strong>
+
+                                <p class="mb-0">
+
+                                    La plataforma permite mostrar productos de manera
+                                    ordenada y accesible para los clientes.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="feature-item mb-3">
+
+                            <div class="feature-icon">3</div>
+
+                            <div>
+
+                                <strong>Conexión comercial</strong>
+
+                                <p class="mb-0">
+
+                                    Facilita la comunicación entre compradores y
+                                    vendedores para impulsar nuevas oportunidades.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="feature-item mb-0">
+
+                            <div class="feature-icon">4</div>
+
+                            <div>
+
+                                <strong>Experiencia sencilla</strong>
+
+                                <p class="mb-0">
+
+                                    Combina desarrollo web, diseño y organización para
+                                    crear una experiencia clara y práctica.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="card card-body bg-light border-0 shadow-sm rounded-4 mt-4">
+
+                    <strong>Fortalecimiento local</strong>
+
+                    <p class="mb-0">
+
+                        Busca que más personas conozcan los productos y servicios
+                        de los emprendimientos locales.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6 text-center">
+
+                <img
+                    src="{{ url_for('static', filename='imagenes/moda.jpg.avif') }}"
+                    alt="Moda local"
+                    class="img-fluid rounded shadow">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+                SERVICIOS Y PRODUCTOS
+    =========================================== -->
+
+    <section
+    <!-- TIENDAS DESTACADAS -->
+
+<section class="my-4">
+
+    <div class="row">
+
+        <!-- Tienda 1 -->
+
+        <div class="col-md-6 mb-4">
+
+            <div class="card shadow">
+
+                <img 
+               src="{{ url_for('static', filename='imagenes/moda2.jpg.avif') }}"
+     class="card-img-top imagen-tienda"
+     alt="Vestidos">
+
+                <div class="card-body text-center">
+
+                    <h5>Boutique Fashion</h5>
+
+                    <p>
+
+                        Local 57<br>
+
+                        Centro Comercial San Luis Shopping<br>
+
+                        Quito - Ecuador
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Tienda 2 -->
+
+        <div class="col-md-6 mb-4">
+
+            <div class="card shadow">
+                
+
+                    <img
+    src="{{ url_for('static', filename='imagenes/moda3.jpg.avif') }}"
+    class="card-img-top imagen-tienda"
+    alt="Pantalones">
+
+<div class="card-body text-center">
+    <h5>Jeans Style</h5>
+
+    <p>
+        Local 57<br>
+        Centro Comercial San Luis Shopping<br>
+        Quito - Ecuador
+    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+        <div class="text-center mb-4">
+
+            <h2>
+
+                Servicios y Productos
+
+            </h2>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <div class="card h-100 shadow-sm">
+
+                    <img src="{{ url_for('static', filename='imagenes/chaqueta-casual.avif.webp') }}" class="card-img-top" alt="Chaqueta casual">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+
+                            Chaqueta Casual
+
+                        </h5>
+
+                        <p class="card-text">
+
+                            Prenda versátil y moderna para combinar con distintos estilos.
+
+                        </p>
+
+                        <div class="d-flex justify-content-center gap-2 mt-3">
+                            <button type="button" class="btn btn-primary btn-sm">Descripción</button>
+                            <button type="button" class="btn btn-outline-primary btn-sm">Seleccionar</button>
+                            <button type="button" class="btn btn-secondary btn-sm">Cambiar</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="card h-100 shadow-sm">
+
+                    <img src="{{ url_for('static', filename='imagenes/bolso-artesanal.avif.jpg') }}" class="card-img-top" alt="Bolso artesanal">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+
+                            Bolso Artesanal
+
+                        </h5>
+
+                        <p class="card-text">
+
+                            Diseño único y fabricación local para complementar tu outfit.
+
+                        </p>
+
+                        <div class="d-flex justify-content-center gap-2 mt-3">
+                            <button type="button" class="btn btn-primary btn-sm">Descripción</button>
+                            <button type="button" class="btn btn-outline-primary btn-sm">Seleccionar</button>
+                            <button type="button" class="btn btn-secondary btn-sm">Cambiar</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="card h-100 shadow-sm">
+
+                    <img src="{{ url_for('static', filename='imagenes/tenis-deportivos.avif.jpg') }}" class="card-img-top" alt="Tenis deportivos">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+
+                            Tenis Deportivos
+
+                        </h5>
+
+                        <p class="card-text">
+
+                            Calzado cómodo y moderno ideal para uso urbano y deportivo.
+
+                        </p>
+
+                        <div class="d-flex justify-content-center gap-2 mt-3">
+                            <button type="button" class="btn btn-primary btn-sm">Descripción</button>
+                            <button type="button" class="btn btn-outline-primary btn-sm">Seleccionar</button>
+                            <button type="button" class="btn btn-secondary btn-sm">Cambiar</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="card h-100 shadow-sm">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+
+                            Comunicación directa entre clientes y vendedores
+
+                        </h5>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="card h-100 shadow-sm">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+
+                            Descuentos y novedades de moda
+
+                        </h5>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+                    CONTACTO
+    =========================================== -->
+
+    <section
+        id="contacto"
+        class="mb-5">
+
+        <div class="text-center mb-4">
+
+            <h2>
+
+                Contacto
+
+            </h2>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- FORMULARIO -->
+
+            <div class="col-lg-6">
+
+                <form
+                    class="card shadow-sm p-4">
+
+                    <div class="mb-3">
+
+                        <label
+                            for="correo"
+                            class="form-label">
+
+                            Correo electrónico
+
+                        </label>
+
+                        <input
+                            type="email"
+                            id="correo"
+                            class="form-control"
+                            placeholder="Ingrese su correo">
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label
+                            for="mensajeContacto"
+                            class="form-label">
+
+                            Mensaje
+
+                        </label>
+
+                        <textarea
+                            id="mensajeContacto"
+                            rows="5"
+                            class="form-control"
+                            placeholder="Escriba su mensaje">
+                        </textarea>
+
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="btn btn-success">
+
+                        Enviar mensaje
+
+                    </button>
+
+                </form>
+
+            </div>
+
+            <!-- INFORMACIÓN -->
+
+            <div class="col-lg-6">
+
+                <div class="card shadow-sm p-4 h-100">
+
+                    <h4>
+
+                        Información de contacto
+
+                    </h4>
+
+                    <hr>
+
+                    <p>
+
+                        <strong>Correo:</strong>
+
+                        vitrinauea@gmail.com
+
+                    </p>
+
+                    <p>
+
+                        <strong>Teléfono:</strong>
+
+                        0969299386
+
+                    </p>
+
+                    <p>
+
+                        <strong>Dirección:</strong>
+
+                        Ecuador
+
+                    </p>
+
+                    <hr>
+
+                    <h5>
+
+                        Redes sociales
+
+                    </h5>
+
+                    <p>
+
+                        Facebook | Instagram
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+                    VIDEO
+    =========================================== -->
+
+    <section
+        class="mb-5">
+
+        <div class="text-center">
+
+            <h2 class="mb-4">
+
+                Video del Proyecto
+
+            </h2>
+
+        </div>
+
+        <div class="video-container ratio ratio-16x9 shadow rounded position-relative overflow-hidden">
+
+            <img
+                id="videoCover"
+                src="{{ url_for('static', filename='imagenes/moda3.jpg.avif') }}"
+                alt="Portada del video"
+                class="video-cover-img position-absolute top-0 start-0 w-100 h-100">
+
+            <div class="video-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                <button id="playVideoBtn" type="button" class="btn btn-light btn-lg rounded-circle shadow">
+                    ▶
+                </button>
+                <div id="videoSpinner" class="spinner-border text-light d-none position-absolute" role="status" style="width: 3rem; height: 3rem;">
+                    <span class="visually-hidden">Cargando...</span>
+                </div>
+            </div>
+
+            <iframe
+                id="videoIframe"
+                data-src="https://www.youtube.com/embed/2zJr2W7V8l8"
+                src=""
+                title="Video del proyecto"
+                allowfullscreen
+                class="video-frame position-absolute top-0 start-0 w-100 h-100">
+
+            </iframe>
+
+        </div>
+
+    </section>
+
+</main>
+
+<!-- Modal confirmación de eliminación -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar eliminación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                ¿Deseas eliminar el producto <strong id="deleteProductName"></strong>?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" id="confirmDeleteBtn" class="btn btn-danger">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- ======================================================
+                        INFORMACIÓN ADICIONAL
+    ======================================================= -->
+
+    <aside class="container my-5">
+
+        <div class="card shadow-sm">
+
+            <div class="card-body">
+
+                <h3 class="card-title">
+
+                    Información adicional
+
+                </h3>
+
+                <p>
+
+                    Promoción especial para nuevos emprendimientos:
+                    crea tu espacio digital y muestra tus productos
+                    en <strong>Vitrina UEA</strong>.
+
+                </p>
+
+                <p>
+
+                    <strong>Horario de atención:</strong>
+
+                    Lunes a viernes de 08:00 a 18:00.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+    <!-- ======================================================
+                REGISTRO DINÁMICO DE PRODUCTOS
+    ======================================================= -->
+
+    <section
+        id="registro"
+        class="container my-5">
+
+        <div class="text-center mb-4">
+
+            <h2>
+
+                Registro de Productos
+
+            </h2>
+
+            <p class="text-muted">
+
+                Complete correctamente la información del producto
+                antes de registrarlo.
+
+            </p>
+
+        </div>
+
+        <!-- =============================================
+                    FORMULARIO
+        ============================================== -->
+
+        <form
+            id="formProducto"
+            class="card shadow p-4"
+            novalidate>
+
+            <!-- Nombre -->
+
+            <div class="mb-3">
+
+                <label
+                    for="nombre"
+                    class="form-label">
+
+                    Nombre del producto
+
+                </label>
+
+                <input
+                    type="text"
+                    id="nombre"
+                    class="form-control"
+                    placeholder="Ingrese el nombre del producto"
+                    required>
+
+                <div
+                    id="errorNombre"
+                    class="invalid-feedback"
+                    aria-live="polite">
+
+                </div>
+
+            </div>
+
+            <!-- Descripción -->
+
+            <div class="mb-3">
+
+                <label
+                    for="descripcion"
+                    class="form-label">
+
+                    Descripción
+
+                </label>
+
+                <textarea
+
+                    id="descripcion"
+
+                    rows="4"
+
+                    class="form-control"
+
+                    placeholder="Ingrese una descripción"
+
+                    required>
+
+                </textarea>
+
+                <div
+                    id="errorDescripcion"
+                    class="invalid-feedback"
+                    aria-live="polite">
+
+                </div>
+
+            </div>
+
+            <!-- Categoría -->
+
+            <div class="mb-4">
+
+                <label
+                    for="categoria"
+                    class="form-label">
+
+                    Categoría
+
+                </label>
+
+                <select
+
+                    id="categoria"
+
+                    class="form-select"
+
+                    required>
+
+                    <option value="">
+
+                        Seleccione una categoría
+
+                    </option>
+
+                    <option value="Ropa">
+
+                        Ropa
+
+                    </option>
+
+                    <option value="Calzado">
+
+                        Calzado
+
+                    </option>
+
+                    <option value="Accesorios">
+
+                        Accesorios
+
+                    </option>
+
+                </select>
+
+                <div
+                    id="errorCategoria"
+                    class="invalid-feedback"
+                    aria-live="polite">
+
+                </div>
+
+            </div>
+
+            <!-- Botón -->
+
+            <div class="d-flex align-items-center gap-3">
+                <button
+                    type="submit"
+                    class="btn btn-primary">
+                    Registrar Producto
+                </button>
+                <div
+                    id="spinnerRegistro"
+                    class="spinner-border text-primary d-none"
+                    role="status">
+                    <span class="visually-hidden">Cargando...</span>
+                </div>
+            </div>
+
+            <!-- Mensaje General -->
+
+            <div
+                id="mensaje"
+                class="mt-4 d-none"
+                role="alert"
+                aria-live="polite">
+            </div>
+
+        </form>
+
+        <!-- =============================================
+                CONTADOR DE PRODUCTOS
+        ============================================== -->
+
+        <div class="mt-5">
+
+            <h4>
+
+                Total de productos registrados:
+
+                <span
+                    id="contador"
+                    class="badge bg-primary">
+
+                    0
+
+                </span>
+
+            </h4>
+
+        </div>
+
+        <!-- =============================================
+                PRODUCTOS REGISTRADOS
+        ============================================== -->
+
+        <div
+
+            id="listaProductos"
+
+            class="row mt-4">
+
+        </div>
+
+        <div class="table-responsive mt-4">
+            <table class="table table-striped table-hover align-middle">
+                <thead class="table-secondary">
+                    <tr>
+                        <th>Producto</th>
+                        <th>Descripción</th>
+                        <th>Categoría</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaProductos"></tbody>
+            </table>
+        </div>
+
+    </section>
+
+    <!-- ======================================================
+                            FOOTER
+    ======================================================= -->
+
+    <footer class="bg-dark text-white mt-5">
+
+        <div class="container text-center py-4">
+
+            <p class="mb-1">
+
+                <strong>
+
+                    Vitrina UEA
+
+                </strong>
+
+            </p>
+
+            <p class="mb-1">
+
+                Proyecto Integrador
+
+                Desarrollo de Aplicaciones Web
+
+            </p>
+
+            <p class="mb-0">
+
+                Johnny Alberto Vera Vaca
+
+                © 2026
+
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- ======================================================
+                    BOOTSTRAP JAVASCRIPT
+    ======================================================= -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- ======================================================
+                    JAVASCRIPT DEL PROYECTO
+    ======================================================= -->
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+{% endblock %}

@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block title %}
+Productos - Vitrina UEA
+{% endblock %}
+
+{% block content %}
+
+<section class="container my-5">
+
+    <div class="text-center mb-5">
+
+        <h2>Productos</h2>
+
+        <p class="lead">
+            Productos disponibles en Vitrina UEA.
+        </p>
+
+    </div>
+
+    <div class="row g-4">
+
+        <!-- Producto 1 -->
+
+        <div class="col-md-4">
+
+            <div class="card h-100 shadow-sm">
+
+                <img
+                    src="{{ url_for('static', filename='imagenes/chaqueta-casual.avif.webp') }}"
+                    class="card-img-top"
+                    alt="Chaqueta casual">
+
+                <div class="card-body">
+
+                    <h5 class="card-title">
+                        Chaqueta Casual
+                    </h5>
+
+                    <p class="card-text">
+                        Prenda versátil y moderna para combinar
+                        con distintos estilos.
+                    </p>
+
+                    <span class="badge bg-primary">
+                        Ropa
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Producto 2 -->
+
+        <div class="col-md-4">
+
+            <div class="card h-100 shadow-sm">
+
+                <img
+                    src="{{ url_for('static', filename='imagenes/bolso-artesanal.avif.jpg') }}"
+                    class="card-img-top"
+                    alt="Bolso artesanal">
+
+                <div class="card-body">
+
+                    <h5 class="card-title">
+                        Bolso Artesanal
+                    </h5>
+
+                    <p class="card-text">
+                        Diseño único y fabricación local para
+                        complementar tu outfit.
+                    </p>
+
+                    <span class="badge bg-primary">
+                        Accesorios
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Producto 3 -->
+
+        <div class="col-md-4">
+
+            <div class="card h-100 shadow-sm">
+
+                <img
+                    src="{{ url_for('static', filename='imagenes/tenis-deportivos.avif.jpg') }}"
+                    class="card-img-top"
+                    alt="Tenis deportivos">
+
+                <div class="card-body">
+
+                    <h5 class="card-title">
+                        Tenis Deportivos
+                    </h5>
+
+                    <p class="card-text">
+                        Calzado cómodo y moderno ideal para
+                        uso urbano y deportivo.
+                    </p>
+
+                    <span class="badge bg-primary">
+                        Calzado
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

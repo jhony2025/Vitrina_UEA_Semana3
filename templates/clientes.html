@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}
+Clientes - Vitrina UEA
+{% endblock %}
+
+{% block content %}
+
+<section class="container my-5">
+
+    <div class="text-center mb-5">
+
+        <h2>Clientes</h2>
+
+        <p class="lead">
+            Información demostrativa de los clientes de Vitrina UEA.
+        </p>
+
+    </div>
+
+    <div class="card shadow-sm">
+
+        <div class="card-body">
+
+            <h4 class="card-title mb-4">
+                Clientes registrados
+            </h4>
+
+            <div class="table-responsive">
+
+                <table class="table table-striped table-hover">
+
+                    <thead class="table-dark">
+
+                        <tr>
+                            <th>#</th>
+                            <th>Cliente</th>
+                            <th>Correo electrónico</th>
+                            <th>Estado</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Cliente demostrativo 1</td>
+                            <td>cliente1@ejemplo.com</td>
+                            <td>
+                                <span class="badge bg-success">
+                                    Activo
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td>Cliente demostrativo 2</td>
+                            <td>cliente2@ejemplo.com</td>
+                            <td>
+                                <span class="badge bg-success">
+                                    Activo
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>Cliente demostrativo 3</td>
+                            <td>cliente3@ejemplo.com</td>
+                            <td>
+                                <span class="badge bg-secondary">
+                                    Inactivo
+                                </span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
