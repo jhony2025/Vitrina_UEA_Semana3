@@ -13,9 +13,13 @@ Proveedores - Vitrina UEA
         <h2>Proveedores</h2>
 
         <p class="lead">
-            Información demostrativa de los proveedores
-            vinculados con Vitrina UEA.
+            Gestión de proveedores registrados en Vitrina UEA.
         </p>
+
+        <a href="{{ url_for('registrar_proveedor') }}"
+           class="btn btn-primary">
+            + Registrar proveedor
+        </a>
 
     </div>
 
@@ -36,46 +40,47 @@ Proveedores - Vitrina UEA
                         <tr>
                             <th>#</th>
                             <th>Proveedor</th>
-                            <th>Producto o servicio</th>
-                            <th>Estado</th>
+                            <th>Teléfono</th>
+                            <th>Correo electrónico</th>
+                            <th>Acciones</th>
                         </tr>
 
                     </thead>
 
                     <tbody>
 
+                        {% for proveedor in proveedores %}
+
                         <tr>
-                            <td>1</td>
-                            <td>Moda Ecuador</td>
-                            <td>Prendas de vestir</td>
+                            <td>{{ proveedor[0] }}</td>
+                            <td>{{ proveedor[1] }}</td>
+                            <td>{{ proveedor[2] or "No registrado" }}</td>
+                            <td>{{ proveedor[3] or "No registrado" }}</td>
                             <td>
-                                <span class="badge bg-success">
-                                    Activo
-                                </span>
+                                <a href="{{ url_for('editar_proveedor', id=proveedor[0]) }}"
+                                   class="btn btn-warning btn-sm">
+                                    Editar
+                                </a>
+
+                                <form action="{{ url_for('eliminar_proveedor', id=proveedor[0]) }}"
+                                      method="POST"
+                                      style="display:inline;">
+                                    <button type="submit" class="btn btn-danger btn-sm">
+                                        Eliminar
+                                    </button>
+                                </form>
                             </td>
                         </tr>
 
+                        {% else %}
+
                         <tr>
-                            <td>2</td>
-                            <td>Accesorios Amazónicos</td>
-                            <td>Accesorios artesanales</td>
-                            <td>
-                                <span class="badge bg-success">
-                                    Activo
-                                </span>
+                            <td colspan="5" class="text-center">
+                                No existen proveedores registrados.
                             </td>
                         </tr>
 
-                        <tr>
-                            <td>3</td>
-                            <td>Calzado Nacional</td>
-                            <td>Calzado</td>
-                            <td>
-                                <span class="badge bg-success">
-                                    Activo
-                                </span>
-                            </td>
-                        </tr>
+                        {% endfor %}
 
                     </tbody>
 

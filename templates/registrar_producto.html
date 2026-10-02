@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block title %}
+Registrar Producto - Vitrina UEA
+{% endblock %}
+
+{% block content %}
+
+<section class="container my-5">
+
+    <div class="text-center mb-5">
+
+        <h2>Registrar Producto</h2>
+
+        <p class="lead">
+            Ingrese los datos del nuevo producto.
+        </p>
+
+    </div>
+
+    <div class="card shadow-sm">
+
+        <div class="card-body">
+
+            <form method="POST">
+
+                <div class="mb-3">
+
+                    <label for="nombre" class="form-label">
+                        Nombre del producto
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        class="form-control"
+                        required>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label for="descripcion" class="form-label">
+                        Descripción
+                    </label>
+
+                    <textarea
+                        id="descripcion"
+                        name="descripcion"
+                        class="form-control"
+                        rows="4"
+                        required></textarea>
+
+                </div>
+
+                <div class="mb-4">
+
+                    <label for="categoria" class="form-label">
+                        Categoría
+                    </label>
+
+                    <select
+                        id="categoria"
+                        name="categoria"
+                        class="form-select"
+                        required>
+
+                        <option value="">
+                            Seleccione una categoría
+                        </option>
+
+                        <option value="Ropa">
+                            Ropa
+                        </option>
+
+                        <option value="Calzado">
+                            Calzado
+                        </option>
+
+                        <option value="Accesorios">
+                            Accesorios
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="mb-4">
+
+                    <label for="imagen" class="form-label">
+                        Imagen del producto
+                    </label>
+
+                    <input
+                        type="text"
+                        id="imagen"
+                        name="imagen"
+                        class="form-control"
+                        placeholder="Ejemplo: camiseta.jpg"
+                        required>
+
+                    <div class="form-text">
+                        Escriba el nombre del archivo de imagen.
+                    </div>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary">
+
+                    Registrar Producto
+
+                </button>
+
+                <a
+                    href="{{ url_for('productos') }}"
+                    class="btn btn-secondary">
+
+                    Ver Productos
+
+                </a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

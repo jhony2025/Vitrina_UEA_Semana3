@@ -13,7 +13,7 @@ Facturación - Vitrina UEA
         <h2>Facturación</h2>
 
         <p class="lead">
-            Registro demostrativo de facturas de Vitrina UEA.
+            Registro de facturas de Vitrina UEA.
         </p>
 
     </div>
@@ -35,8 +35,8 @@ Facturación - Vitrina UEA
                         <tr>
                             <th>#</th>
                             <th>Cliente</th>
-                            <th>Producto</th>
-                            <th>Valor</th>
+                            <th>Fecha</th>
+                            <th>Total</th>
                             <th>Estado</th>
                         </tr>
 
@@ -44,41 +44,25 @@ Facturación - Vitrina UEA
 
                     <tbody>
 
+                        {% for factura in facturas %}
+
                         <tr>
-                            <td>001</td>
-                            <td>Cliente demostrativo 1</td>
-                            <td>Chaqueta Casual</td>
-                            <td>$45.00</td>
-                            <td>
-                                <span class="badge bg-success">
-                                    Pagada
-                                </span>
+                            <td>{{ factura[0] }}</td>
+                            <td>{{ factura[1] }}</td>
+                            <td>{{ factura[2] }}</td>
+                            <td>${{ "%.2f"|format(factura[3]) }}</td>
+                            <td>{{ factura[4] }}</td>
+                        </tr>
+
+                        {% else %}
+
+                        <tr>
+                            <td colspan="5" class="text-center">
+                                No existen facturas registradas.
                             </td>
                         </tr>
 
-                        <tr>
-                            <td>002</td>
-                            <td>Cliente demostrativo 2</td>
-                            <td>Bolso Artesanal</td>
-                            <td>$30.00</td>
-                            <td>
-                                <span class="badge bg-warning text-dark">
-                                    Pendiente
-                                </span>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>003</td>
-                            <td>Cliente demostrativo 3</td>
-                            <td>Tenis Deportivos</td>
-                            <td>$55.00</td>
-                            <td>
-                                <span class="badge bg-success">
-                                    Pagada
-                                </span>
-                            </td>
-                        </tr>
+                        {% endfor %}
 
                     </tbody>
 

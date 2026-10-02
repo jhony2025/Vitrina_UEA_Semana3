@@ -13,8 +13,13 @@ Clientes - Vitrina UEA
         <h2>Clientes</h2>
 
         <p class="lead">
-            Información demostrativa de los clientes de Vitrina UEA.
+            Gestión de clientes registrados en Vitrina UEA.
         </p>
+
+        <a href="{{ url_for('registrar_cliente') }}"
+           class="btn btn-primary">
+            + Registrar cliente
+        </a>
 
     </div>
 
@@ -35,46 +40,63 @@ Clientes - Vitrina UEA
                         <tr>
                             <th>#</th>
                             <th>Cliente</th>
+                            <th>Teléfono</th>
                             <th>Correo electrónico</th>
-                            <th>Estado</th>
+                            <th>Acciones</th>
                         </tr>
 
                     </thead>
 
                     <tbody>
 
-                        <tr>
-                            <td>1</td>
-                            <td>Cliente demostrativo 1</td>
-                            <td>cliente1@ejemplo.com</td>
-                            <td>
-                                <span class="badge bg-success">
-                                    Activo
-                                </span>
-                            </td>
-                        </tr>
+                        {% for cliente in clientes %}
 
                         <tr>
-                            <td>2</td>
-                            <td>Cliente demostrativo 2</td>
-                            <td>cliente2@ejemplo.com</td>
+
+                            <td>{{ cliente[0] }}</td>
+
+                            <td>{{ cliente[1] }}</td>
+
+                            <td>{{ cliente[2] or "No registrado" }}</td>
+
+                            <td>{{ cliente[3] or "No registrado" }}</td>
+
                             <td>
-                                <span class="badge bg-success">
-                                    Activo
-                                </span>
+
+                                <a href="{{ url_for('editar_cliente', id=cliente[0]) }}"
+                                   class="btn btn-warning btn-sm">
+                                    Editar
+                                </a>
+
+                                <form action="{{ url_for('eliminar_cliente', id=cliente[0]) }}"
+                                      method="POST"
+                                      style="display:inline;">
+
+                                    <button type="submit"
+                                            class="btn btn-danger btn-sm">
+                                        Eliminar
+                                    </button>
+
+                                </form>
+
                             </td>
+
                         </tr>
 
+                        {% else %}
+
                         <tr>
-                            <td>3</td>
-                            <td>Cliente demostrativo 3</td>
-                            <td>cliente3@ejemplo.com</td>
-                            <td>
-                                <span class="badge bg-secondary">
-                                    Inactivo
-                                </span>
+
+                            <td colspan="5"
+                                class="text-center">
+
+                                No existen clientes registrados.
+
                             </td>
+
                         </tr>
+
+                        {% endfor %}
 
                     </tbody>
 
