@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}
+Factura {{ factura.id }} - Vitrina UEA
+{% endblock %}
+
+{% block content %}
+<section class="container my-5">
+
+    <div class="text-center mb-4">
+        <h2>Factura / Comprobante</h2>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body p-4">
+
+            <div class="row g-3 mb-4">
+                <div class="col-sm-6">
+                    <strong>Número de factura:</strong>
+                    <span>{{ factura.id }}</span>
+                </div>
+                <div class="col-sm-6">
+                    <strong>Cliente:</strong>
+                    <span>{{ factura.cliente }}</span>
+                </div>
+                <div class="col-sm-6">
+                    <strong>Fecha:</strong>
+                    <span>{{ factura.fecha or "No disponible" }}</span>
+                </div>
+                <div class="col-sm-6">
+                    <strong>Estado:</strong>
+                    <span class="badge bg-secondary">{{ factura.estado }}</span>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-striped align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Producto</th>
+                            <th class="text-end">Cantidad</th>
+                            <th class="text-end">Precio unitario</th>
+                            <th class="text-end">Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for detalle in detalles %}
+                        <tr>
+                            <td>{{ detalle.producto }}</td>
+                            <td class="text-end">{{ detalle.cantidad }}</td>
+                            <td class="text-end">${{ "%.2f"|format(detalle.precio) }}</td>
+                            <td class="text-end">${{ "%.2f"|format(detalle.cantidad * detalle.precio) }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3" class="text-end">Subtotal</th>
+                            <th class="text-end">${{ "%.2f"|format(subtotal) }}</th>
+                        </tr>
+                        <tr>
+                            <th colspan="3" class="text-end">IVA (15%)</th>
+                            <th class="text-end">${{ "%.2f"|format(iva) }}</th>
+                        </tr>
+                        <tr>
+                            <th colspan="3" class="text-end">Total a pagar</th>
+                            <th class="text-end">${{ "%.2f"|format(total_con_iva) }}</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="{{ url_for('facturacion') }}" class="btn btn-primary">
+                    Volver a facturación
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+{% endblock %}

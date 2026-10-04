@@ -671,6 +671,70 @@ def registrar_factura():
     )
 
 
+@app.route("/ver_factura/<int:id>")
+@login_required
+def ver_factura(id):
+
+    from decimal import Decimal
+
+    conexion = obtener_conexion()
+    cursor = conexion.cursor()
+
+    cursor.execute("""
+        SELECT
+            facturas.id,
+            clientes.nombre,
+            facturas.fecha,
+            productos.nombre,
+            detalle_factura.cantidad,
+            detalle_factura.precio,
+            facturas.total,
+            facturas.estado
+        FROM facturas
+        JOIN clientes ON facturas.cliente_id = clientes.id
+        JOIN detalle_factura ON facturas.id = detalle_factura.factura_id
+        JOIN productos ON detalle_factura.producto_id = productos.id
+        WHERE facturas.id = %s
+    """, (id,))
+
+    registros = cursor.fetchall()
+
+    cursor.close()
+    conexion.close()
+
+    if not registros:
+        return "Factura no encontrada", 404
+
+    factura = {
+        "id": registros[0][0],
+        "cliente": registros[0][1],
+        "fecha": registros[0][2],
+        "total": registros[0][6],
+        "estado": registros[0][7]
+    }
+    subtotal = Decimal(str(factura["total"]))
+    iva = subtotal * Decimal("0.15")
+    total_con_iva = subtotal + iva
+
+    detalles = [
+        {
+            "producto": registro[3],
+            "cantidad": registro[4],
+            "precio": registro[5]
+        }
+        for registro in registros
+    ]
+
+    return render_template(
+        "ver_factura.html",
+        factura=factura,
+        detalles=detalles,
+        subtotal=subtotal,
+        iva=iva,
+        total_con_iva=total_con_iva
+    )
+
+
 # ==============================
 # EJECUCIÓN
 # ==============================

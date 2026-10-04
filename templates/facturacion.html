@@ -18,6 +18,12 @@ Facturación - Vitrina UEA
 
     </div>
 
+    <div class="text-center mb-4">
+        <a href="{{ url_for('registrar_factura') }}" class="btn btn-primary">
+            Registrar nueva factura
+        </a>
+    </div>
+
     <div class="card shadow-sm">
 
         <div class="card-body">
@@ -38,6 +44,7 @@ Facturación - Vitrina UEA
                             <th>Fecha</th>
                             <th>Total</th>
                             <th>Estado</th>
+                            <th>Acciones</th>
                         </tr>
 
                     </thead>
@@ -52,12 +59,17 @@ Facturación - Vitrina UEA
                             <td>{{ factura[2] }}</td>
                             <td>${{ "%.2f"|format(factura[3]) }}</td>
                             <td>{{ factura[4] }}</td>
+                            <td>
+                                <a href="{{ url_for('ver_factura', id=factura[0]) }}" class="btn btn-primary btn-sm">
+                                    Ver factura
+                                </a>
+                            </td>
                         </tr>
 
                         {% else %}
 
                         <tr>
-                            <td colspan="5" class="text-center">
+                            <td colspan="6" class="text-center">
                                 No existen facturas registradas.
                             </td>
                         </tr>
